@@ -31,7 +31,7 @@ public class WeightedUndirectedGraph_Implementation {
 	}
 
 	public void addEdge(int source, int destination, int weight) {
-		// creating an undirected graph therefore i connected source with destination as
+		// creating an undirected graph therefore I connected source with destination as
 		// well as destination with source
 		adj[source].add(new Edge(destination, weight));// simply adding the a node in linkedlist of vertice 'source'
 		adj[destination].add(new Edge(source, weight));// if we simply remove this line then it becomes directed graph
