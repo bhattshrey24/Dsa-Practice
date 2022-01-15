@@ -105,8 +105,83 @@ public class BST_Implementation {
 		}
 	}
 
-	public void deleteNode(int data) {
+	public void deleteNode(int data) {// this just calls deleteNodeRec
+		// see this https://www.geeksforgeeks.org/binary-search-tree-set-2-delete/
+		// when deleting there are 3 cases:
+		// 1) Node to be deleted is the leaf then Simply remove from the tree.
+		// 2) Node to be deleted has only one child: Copy the child to the node and
+		// delete the child
+		// 3) Node to be deleted has two children: Find inorder successor of the node.
+		// Copy contents of the inorder successor to the node and delete the inorder
+		// successor. Note that inorder predecessor can also be used.
 
+		root = deleteRec(root, data);// simply reset the root cause its possible that user wanted to delete the root
+										// element in which case we will have new root
+
+	}
+
+	private BstNode deleteRec(BstNode node, int data) {// initially node will be the root element
+
+		// it might look scary but just dry run it for a small tree
+
+		if (node == null)/* Base Case: If the tree is empty */
+			return node;
+
+		/* Otherwise, recur down the tree */
+
+		// first we will find the node which needs to be deleted
+		if (data < node.data)
+			node.left = deleteRec(node.left, data); // root of the left subtree might change after deletion , so have
+													// faith that recursion will give u the root of the new left subtree
+													// so simply again join it to left of current node
+		else if (data > node.data)
+			node.right = deleteRec(node.right, data);
+
+		else {
+			// this means we FOUND the element i.e. current node is the one that is to
+			// be deleted
+
+			// case 3 : node with 2 children
+			if (node.left != null && root.right != null) {
+
+				int lmax = maxNode(node.left);// this will return the max element in left subtree of current node
+
+				node.data = lmax;// instead of deleting current node and again making new one and making all the
+									// connection simply replace
+									// the data which is to be deleted with lmax
+
+				node.left = deleteRec(node.left, lmax);// since we gave max value from right sub tree to current node so
+														// now we simply have to delete it from the left subtree and
+														// assign
+														// the new root of left subtree to left of current node
+
+				return node;
+
+				// case 2 : node with only 1 children
+			} else if (node.left == null) {// when current node only have right node
+
+				return node.right;// simply return the right node so that it can be attached to the parent of the
+									// current node which is the node to be deleted
+
+			} else if (node.right == null) {// when current node only have left node
+				return node.left;
+
+				// case 1 : no child i.e. element to be deleted is the leaf node
+			} else {
+				return null;// returning null works perfectly just give it a dry run
+			}
+		}
+
+		return node;
+	}
+
+	private int maxNode(BstNode node) {// we just have to travel to the right most element
+		if (node.right == null) {// means current element is the right most element
+			return node.data;
+		} else {
+			return maxNode(root.right);// simply have leap of faith that recursion will go in right subtree and return
+										// the max element
+		}
 	}
 
 	public void displayInOrder(BstNode root) { // In bst inorder always results in sorted array
