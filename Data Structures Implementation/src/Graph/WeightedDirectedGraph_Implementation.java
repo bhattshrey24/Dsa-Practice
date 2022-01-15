@@ -6,10 +6,11 @@ import Graph.WeightedUndirectedGraph_Implementation.Edge;
 
 public class WeightedDirectedGraph_Implementation {
 
-	public LinkedList<Edge> adj[];// array of linked List
+	public LinkedList<Edge> adj[];// array of type 'LinkedList<Edge>'
 
 	public WeightedDirectedGraph_Implementation(int v) {
 		adj = new LinkedList[v];// we are initializing adj array , we are just telling its size
+
 		for (int i = 0; i < v; i++) { // assuming vertices starts from 0
 			adj[i] = new LinkedList<Edge>();// we are connecting a empty linked list to every vertex i.e element of
 											// array adj
@@ -41,7 +42,7 @@ public class WeightedDirectedGraph_Implementation {
 		for (int i = 0; i < adj.length; i++) {
 			LinkedList<Edge> temp = adj[i];
 			int j = 0;
-			System.out.print("a["+i+"]=>");
+			System.out.print("a[" + i + "]=>");
 			while (j < temp.size()) {
 				System.out.print("| v:" + temp.get(j).vertice + " w:" + temp.get(j).weight + "|-->");
 				j++;
