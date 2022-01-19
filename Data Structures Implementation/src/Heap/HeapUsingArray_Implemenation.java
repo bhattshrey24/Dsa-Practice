@@ -154,11 +154,50 @@ public class HeapUsingArray_Implemenation {
 		return rootEle;
 	}
 
-	public void heapify() {
+	public void minHeapifyClient(int arr[]) {// minHeapify cause we are creating min heap
+		int maxSize = arr.length;
+		// here we are assuming that the array given to us is like a 'tree' which needs
+		// to
+		// be heapified i.e. converted into heap
+
+		for (int i = arr.length - 1; i >= 0; i--) {// ulta loop chlaenge cause leaf node se start krte hai heapify krna
+			minHeapifyImple(arr, i, maxSize);
+		}
+
+		// just displaying the heapified array
+		System.out.println();
+		for (int ele : arr) {
+			System.out.print(ele + "| ");
+		}
 
 	}
 
-	public void HeapSort() {
+	public void minHeapifyImple(int[] arr, int eleIdx, int maxSize) {
+		if (!isLeaf(eleIdx, maxSize)) {
+			int currSmallestEleIdx = eleIdx;// assuming in the start that currentEle is the largest ele
+			int lc = leftChildIdx(eleIdx);
+			int rc = rightChildIdx(eleIdx);
+
+			if (lc < maxSize && arr[lc] < arr[currSmallestEleIdx]) {
+				currSmallestEleIdx = lc;
+			}
+			if (rc < maxSize && arr[rc] < arr[currSmallestEleIdx]) {
+				currSmallestEleIdx = rc;
+			}
+
+			if (currSmallestEleIdx != eleIdx) {
+				swapHeapEle(arr, currSmallestEleIdx, eleIdx);
+				minHeapifyImple(arr, currSmallestEleIdx, maxSize);
+			}
+		} else {
+			return;
+		}
+	}
+
+	private void swapHeapEle(int arr[], int i, int j) {
+		int temp = arr[i];
+		arr[i] = arr[j];
+		arr[j] = temp;
 	}
 
 	public void displayHeap() {// this is not in actual heap API , I just created it to see that wehter heap is
@@ -170,5 +209,3 @@ public class HeapUsingArray_Implemenation {
 		System.out.println();
 	}
 }
-
-

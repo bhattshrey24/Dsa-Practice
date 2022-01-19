@@ -1,6 +1,8 @@
 package Heap;
 
 public class HeapUsingArray_Client {
+	// refer to this video if any doubt https://www.youtube.com/watch?v=HqPJF2L5h9U
+
 	// A Min heap is typically represented as an array.
 	// The root element will be at Arr[0]. For any ith node, i.e., Arr[i]
 	// Arr[(i -1) / 2] returns its parent node.
@@ -31,8 +33,7 @@ public class HeapUsingArray_Client {
 		System.out.println("ele removed : "+minHeap.deleteEle());
 		minHeap.displayHeap();
 		System.out.println("ele removed : "+minHeap.deleteEle());
-		
-
+	
 	}
 
 }
