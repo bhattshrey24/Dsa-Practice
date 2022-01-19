@@ -106,7 +106,7 @@ public class BST_Implementation {
 	}
 
 	public void deleteNode(int data) {// this just calls deleteNodeRec
-		// see this https://www.geeksforgeeks.org/binary-search-tree-set-2-delete/
+		
 		// when deleting there are 3 cases:
 		// 1) Node to be deleted is the leaf then Simply remove from the tree.
 		// 2) Node to be deleted has only one child: Copy the child to the node and
