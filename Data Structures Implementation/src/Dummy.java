@@ -1,18 +1,20 @@
 
 public class Dummy {
+	int num1;
+	int num2;
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Dummy ob = new Dummy();
+		ob.num1 = 10;
+		ob.num2 = 20;
+		Dummy ob2 = new Dummy();
+		ob.num1 = 10;
+		ob.num2 = 20;
+		System.out.println(ob.equals(ob
+				));
 		
-		int arr[] = new int[] { 1, 2, 3, 4 };
-		ob.changeEle(arr);
-		System.out.println(arr[0]);
 
-	}
-
-	public void changeEle(int[] ar) {
-		ar[0] = 100;
 	}
 
 }
