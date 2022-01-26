@@ -35,7 +35,7 @@ public class Kosaraju_StronglyConnectedGraph {
 	        }
 		 
 		 
-	//STEP 2 (Reversing) // we are reversing in the same graph,  the ones with weight 1 are reversed edgs
+	//STEP 2 (Reversing) // we are reversing in the same graph,  the ones with weight 1 are reversed edges
 		 
 			for(int i=0;i<gf.adj.length;i++) {// reversing and adding edges in same graph			
 				for(WeightedDirectedGraph.Edge nbr:gf.adj[i]) {
