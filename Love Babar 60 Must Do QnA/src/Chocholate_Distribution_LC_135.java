@@ -2,8 +2,8 @@
 public class Chocholate_Distribution_LC_135 {
 // URL to question = https://leetcode.com/problems/candy/
 	public static void main(String[] args) {
-		Chocholate_Distribution_LC_135 ob = new Chocholate_Distribution_LC_135();
-		System.out.println(ob.candy(new int[] { 1, 2, 2 }));
+		Chocholate_Distribution_LC_135 object = new Chocholate_Distribution_LC_135();
+		System.out.println(object.candy(new int[] { 1, 2, 2 }));
 
 	}
 
@@ -34,7 +34,6 @@ public class Chocholate_Distribution_LC_135 {
 		for (int i = 1; i < ratings.length; i++) {// going left to right
 			if (ratings[i] > ratings[i - 1] && CPAES[i] <= CPAES[i - 1]) {
 				CPAES[i] = CPAES[i - 1] + 1; // adding 1 to previous child's chocolate and giving it to current child
-
 			}
 		}
 
