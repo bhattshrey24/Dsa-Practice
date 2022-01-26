@@ -13,7 +13,9 @@ public class NearestZeroMatrix_542 {
 	public static void main(String[] args) {
 		int[][] grid = new int[3][3];
 		Scanner sc = new Scanner(System.in);
+		String s = "";
 
+		
 		for (int i = 0; i < grid.length; i++) {
 			System.out.println("enter elements for row " + i);
 			for (int j = 0; j < grid[i].length; j++) {
