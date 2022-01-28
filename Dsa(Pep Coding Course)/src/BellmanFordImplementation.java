@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import Graph.WeightedDirectedGraph;
+
 public class BellmanFordImplementation {
 
 	public static void main(String[] args) {

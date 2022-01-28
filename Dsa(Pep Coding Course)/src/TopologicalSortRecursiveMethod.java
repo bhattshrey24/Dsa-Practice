@@ -2,6 +2,8 @@ import java.util.LinkedList;
 import java.util.Scanner;
 import java.util.Stack;
 
+import Graph.WeightedDirectedGraph;
+
 public class TopologicalSortRecursiveMethod {
 
 	public static void main(String[] args) {

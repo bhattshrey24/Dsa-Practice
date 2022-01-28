@@ -1,6 +1,8 @@
 import java.util.HashSet;
 import java.util.Scanner;
 
+import Graph.WeightedUndirectedGrapg;
+
 // this is same as Ap just difference is instead of vertex here we will find edges that breaks our grapg in 2 or more components
 public class Bridges {
 
