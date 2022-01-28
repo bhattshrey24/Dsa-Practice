@@ -1,6 +1,8 @@
 import java.util.Scanner;
 import java.util.Stack;
 
+import Graph.WeightedDirectedGraph;
+
 public class DFS {
 
 	public static void main(String[] args) {

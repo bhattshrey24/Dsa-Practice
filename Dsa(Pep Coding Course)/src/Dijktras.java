@@ -2,6 +2,8 @@ import java.util.LinkedList;
 import java.util.PriorityQueue;
 import java.util.Scanner;
 
+import Graph.WeightedUndirectedGrapg;
+
 public class Dijktras {
 
 	public static void main(String[] args) {

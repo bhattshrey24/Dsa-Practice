@@ -8,10 +8,9 @@ public class Majority_Element_169 {
 	}
 
 	// We can solve it using hashmap too but that will take space
-
+	
 	// We are using Boyer Moore Voting Algo
 	// TC=O(n) and SC= O(1)
-
 	public int majorityElement(int[] nums) {
 		int val = nums[0];
 		int count = 1;

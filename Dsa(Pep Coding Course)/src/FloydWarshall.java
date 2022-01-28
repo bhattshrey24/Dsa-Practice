@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import Graph.WeightedDirectedGraph;
+
 public class FloydWarshall {
 
 	public static void main(String[] args) {
