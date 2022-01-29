@@ -36,17 +36,13 @@ wordList.add("lot");
 wordList.add("log");
 wordList.add("cog");	
 		
-//		wordList.add("dot");		
-//		wordList.add("dog");
-//		wordList.add("hot");
-
-		
-
 int ans=ladderLength("hit", "cog", wordList);
 		System.out.println("Ans:"+ans);
 	
        
 	}
+	
+	// Better TC solution
  	public static int ladderLength(String beginWord, String endWord, List<String> wordList) {
 // Step 1 Convert given wordlist in hashset
  		boolean isBeginWordPresent=false;
@@ -64,10 +60,6 @@ int ans=ladderLength("hit", "cog", wordList);
  			wordListSet.add(beginWord);
  		}
  		
-// 		for(String ele:wordListSet) {
-// 			System.out.println(ele);
-// 		}
-// 		
  // Step 2 generating all permutation and finding if it is there 
  		ArrayDeque<Pair> que= new ArrayDeque<>();
  		que.add(new Pair(beginWord,1));
@@ -75,7 +67,7 @@ int ans=ladderLength("hit", "cog", wordList);
  		while(!que.isEmpty()) {
  			Pair currEle= que.remove();
  			
- 			if(!wordListSet.contains(currEle.word)) {// this is condition for visited
+ 			if(!wordListSet.contains(currEle.word)) {// this is condition for visited , i.e. if its not present in word list means it is already visited
  				continue;
  			}
  			wordListSet.remove(currEle.word);// marked visited , here visited is marked by removing from wordlist
@@ -99,7 +91,7 @@ int ans=ladderLength("hit", "cog", wordList);
  				        	 perm =currEle.word.substring(0,i)+ch+currEle.word.substring(i+1);
  					  } 
  					  
- 					  if(wordListSet.contains(perm)) {// this is like checking if it is already visited or not
+ 					  if(wordListSet.contains(perm)) {// this is checking if it is already visited or not
  	 					  // if we inside means we havent visited it
  						  que.add(new Pair(perm,currEle.cost+1));
  	 				  }
