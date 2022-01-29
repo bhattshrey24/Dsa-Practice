@@ -25,7 +25,7 @@ public class Majority_Element_169 {
 				if (count == 0) {
 					val = nums[i];
 					count = 1;
-				} else {// pair it
+				} else {// pair it , we are not actually pairing them count-- signifies that it's paired 
 					count--;
 				}
 
