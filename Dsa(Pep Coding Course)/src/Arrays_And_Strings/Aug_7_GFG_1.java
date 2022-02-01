@@ -16,6 +16,8 @@ public class Aug_7_GFG_1 {
 	}
 
 	// I'm 99% sure that this works
+	// Though complexity wise the below method is not very wise cause its better to
+	// use Hashmap solution here
 	public ArrayList<Integer> funMajEle(int nums[], int n, int k) {
 		ArrayList<Integer> ans = new ArrayList<>();
 
