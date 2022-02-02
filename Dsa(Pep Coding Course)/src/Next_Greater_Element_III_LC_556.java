@@ -6,6 +6,9 @@ public class Next_Greater_Element_III_LC_556 {
 		long i = 22222222L;
 		System.out.println(2154 % 10);
 		System.err.println(ob.nextGreaterElement(12543221));
+		
+		int a=-10;
+		int b=Math.abs(a);
 
 	}
 
