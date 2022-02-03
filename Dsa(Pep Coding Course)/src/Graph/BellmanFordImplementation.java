@@ -1,6 +1,8 @@
+package Graph;
+
 import java.util.Scanner;
 
-import Graph.WeightedDirectedGraph;
+import Graph.WeightedDirectedGraph.Edge;
 
 public class BellmanFordImplementation {
 
@@ -31,42 +33,39 @@ public class BellmanFordImplementation {
 																								// both directed and
 																								// undirected just pass
 																								// undirected here to
-		// step 1 initializing array // get answer for that
-		boolean visited[] = new boolean[gf.adj.length];
+		// step 1 initializing array
 		int ans[] = new int[gf.adj.length];
 		for (int i = 0; i < ans.length; i++) {
-			if (i == startVertx) {
+			if (i == startVertx) {// source se source tk ka distance cannot be less than 0
 				ans[i] = 0;
 			} else {
 				ans[i] = Integer.MAX_VALUE;
 			}
 		}
 		// step 2 running bellman ford v-1 times
+		for (int i = 0; i < gf.adj.length - 1; i++) {// simply processing each vertex v-1 times
 
-		for (int z = 0; z < gf.adj.length - 1; z++) { // simply processing each vertex v-1 times
+			for (int j = 0; j < gf.adj.length; j++) {// simply traversing over every edge
 
-			for (int i = 0; i < numOfedges; i++) {// this should be edge number if time not vertices , this adj is quite
-													// weird instead of this simply run this algo v-1 times for whole
-													// graph
-
-				if (ans[i] == Integer.MAX_VALUE) {
+				if (ans[j] == Integer.MAX_VALUE) {// this is inorder to save us from unnecessary error like if we don't
+													// do it then in below 'if' statement it will compare infinity with
+													// infinity or try to add something to infinity which will
+													// give us error
 					continue;
 				}
-
-				for (int j = 0; j < gf.adj[i].size(); j++) {
-					WeightedDirectedGraph.Edge edge = gf.adj[i].get(j);
-
-					if (ans[i] + edge.weight < ans[edge.vertice]) {// (ans[i] + edge.weight < ans[edge.vertice] means
-																	// "Mujhse"(ans[i] + edge.weight) agar mere neighbor
-																	// tk jana (ans[edge.vertice]) is cheaper than
-																	// source se neighbor tk jana using some other path
-																	// then choose me
-						ans[edge.vertice] = ans[i] + edge.weight;
+				for (Edge edge : gf.adj[j]) {
+					if (ans[j] + edge.weight < ans[edge.vertice]) {// (ans[i] + edge.weight < ans[edge.vertice] means
+																	// "Mujhse"(i.e. ans[i] + edge.weight) agar mere
+																	// neighbor tk jana (i.e. ans[edge.vertice]) is
+																	// cheaper than source se neighbor tk jana using
+																	// some other path then choose me
+						ans[edge.vertice] = ans[j] + edge.weight;
 					}
 				}
-
 			}
+
 		}
+		// simply printing the answer
 		System.out.println("ANSWER :-");
 		for (int el : ans) { // if in directed graph any of these comes infinty means we cant go there by any
 								// path
