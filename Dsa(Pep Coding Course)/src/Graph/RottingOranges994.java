@@ -1,3 +1,5 @@
+package Graph;
+
 import java.util.ArrayDeque;
 
 public class RottingOranges994 {
@@ -8,7 +10,7 @@ public class RottingOranges994 {
 	}
 
 	public static int orangesRotting(int[][] grid) {
-		// step 1  , add all cell with value 2 in queue
+		// step 1 , add all cell with value 2 in queue
 		ArrayDeque<Pair> que = new ArrayDeque<Pair>();
 		for (int i = 0; i < grid.length; i++) {
 			for (int j = 0; j < grid[i].length; j++) {
