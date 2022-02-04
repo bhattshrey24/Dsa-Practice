@@ -21,6 +21,7 @@ public class RottingOranges994 {
 		}
 // Step 2 multi source BFS
 		Pair currEle = new Pair();
+		
 		while (!que.isEmpty()) {
 			currEle = que.remove();
 			if (currEle.i - 1 >= 0) {
