@@ -1,7 +1,6 @@
+package Graph;
 import java.util.ArrayDeque;
 import java.util.Scanner;
-
-import Graph.WeightedDirectedGraph;
 
 //KAHNS ALGO
 public class TopologicalSortKahnsAlgo {
