@@ -1,6 +1,5 @@
+package Graph;
 import java.util.Scanner;
-
-import Graph.WeightedUndirectedGrapg;
 
 public class ArticulationPoint {
 
