@@ -93,7 +93,7 @@ public class Bridges {
 				// neighbor's neighbor) therefore we wont cross any
 				// path of dfs
 
-				if (low[nbr.vertice] > discovery[vertx]) {// this means that if my neighbor can not reach me or before me then the current edge is bridge
+				if (low[nbr.vertice] > discovery[vertx]) {// See this is the only difference  here we are doing '<' instead of '<=' which we did in Ap , this means that if my neighbor can not reach me or before me then the current edge is bridge
 				
 					String edg = String.valueOf(vertx) + "," + String.valueOf(nbr.vertice); 
 					

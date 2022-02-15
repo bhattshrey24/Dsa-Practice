@@ -66,7 +66,6 @@ public class ArticulationPoint {
 			return;
 		}
 		
-		//System.out.println();
 		visited[vertx] = true; // marking visited
 
 		discovery[vertx] = discoverdAt;// work
@@ -77,11 +76,12 @@ public class ArticulationPoint {
 			if (parent[vertx] == nbr.vertice) {
 				continue; // that is dont do anything if current nbr is your parent just ignore this
 							// neighbor completely
-			} else if (visited[nbr.vertice]) {// if neighbor not visited then do dfs
+			} else if (visited[nbr.vertice]) {// if neighbor is not parent but is visited it means you found a new path to reach neighbor apart from the one that DFS took
 				low[vertx] = Math.min(low[vertx], discovery[nbr.vertice]);
-			} else {
-				if(vertx==actualSource) {
-					countForActualSource[0]+=1; // we are just calculating that how many times dfs is run from actual source cause if its more than one then it means that actual source is also Ap
+			} else {// if neighbor is not visited and not parent then do dfs
+				
+				if(vertx==actualSource) {// handling the case of source vertex of DFS
+					countForActualSource[0]+=1; // we are just calculating that how many times dfs is run from actual source cause if its more than one then it means that actual source is also Ap , and we passed array and not a variable cause array is sort of passed by reference so any changes will be reflected back
 				}
 
 				parent[nbr.vertice] = vertx;// since we are about to go in dfs so before that make current vertex as
@@ -89,11 +89,11 @@ public class ArticulationPoint {
 			
 				dfs(gf, visited, nbr.vertice, low, parent, discovery, isAp, discoverdAt, actualSource , countForActualSource);
 
-				// now we come here when BACKTRACKING
+				// now we come here while BACKTRACKING
 
 				low[vertx] = Math.min(low[vertx], low[nbr.vertice]);// now here we used low of neighbor and not
 																	// discovery cause while backtracing we obviously
-																	// will return in same path in whic dfs was run and
+																	// will return in same path in which dfs was run and
 																	// since previously in if block where we checked "is
 																	// visited" we updated low with discovery of
 																	// neighbor and not low with low of neighbor 
