@@ -6,9 +6,16 @@ public class Largest_Number_At_Least_Twice_of_Others_747 {
 		// TODO Auto-generated method stub
 
 	}
+
 	// Its quite simple , just dry run for [0,0,3,2] and [1,0,2,3,6] they cover all
 	// cases
-
+	
+	// either use my approach or sir's approach where you simply traverse through
+	// given array and find out max and 2nd max and after coming out of loop just
+	// simply check whether (2nd max*2)<=max or not if yes then return index of max
+	// element else return -1 cause if 2nd max element satisfies the condition then
+	// all other elements in array will also do so
+	
 	public int dominantIndex(int[] nums) {
 		int ansIndex = 0;// stores index of the answer element
 		int max = nums[0];// initially we are assuming that 1st element is max and satifies the contition
