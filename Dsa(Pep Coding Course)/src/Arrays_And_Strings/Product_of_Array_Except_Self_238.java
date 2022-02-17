@@ -8,7 +8,7 @@ public class Product_of_Array_Except_Self_238 {
 
 	// Simply using the concept of prefix product and suffix product , just dry run
 	// for [1,2,3,4,5]
-
+    // we can further improve space complexity (see video if you have doubt) by storing prefix array in answer array and suffix as variable and calculating it suffix while moving from right to left while calculating actual answer
 	public int[] productExceptSelf(int[] nums) {
 		int answer[] = new int[nums.length];
 		int prefixProd[] = new int[nums.length];
