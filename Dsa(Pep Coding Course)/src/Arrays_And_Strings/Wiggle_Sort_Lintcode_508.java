@@ -3,8 +3,10 @@ package Arrays_And_Strings;
 public class Wiggle_Sort_Lintcode_508 {
 
 	public static void main(String[] args) {
-		Wiggle_Sort_Lintcode_508 ob = new Wiggle_Sort_Lintcode_508();
-		ob.wiggleSort(new int[] { 3, 5, 2, 1, 6, 4 });
+		new Wiggle_Sort_Lintcode_508().wiggleSort(new int[] { 3, 5, 2, 1, 6, 4 });// directly making object and calling
+																					// function on it instead of simply
+																					// saving it in a variable and then
+																					// calling function on that variable
 	}
 
 	// its quite simple actually
