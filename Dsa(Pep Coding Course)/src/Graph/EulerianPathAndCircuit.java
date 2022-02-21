@@ -1,7 +1,5 @@
+package Graph;
 import java.util.Scanner;
-
-import Graph.WeightedDirectedGraph;
-import Graph.WeightedUndirectedGrapg;
 
 // this is just for true and false that whether EP and EC exsists or not and not finding the path 
 public class EulerianPathAndCircuit {
