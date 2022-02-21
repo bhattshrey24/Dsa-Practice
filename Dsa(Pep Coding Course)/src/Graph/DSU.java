@@ -1,3 +1,4 @@
+package Graph;
 
 public class DSU {
 
@@ -66,13 +67,13 @@ public class DSU {
 		if (a != b) {
 			if (rank[a] > rank[b]) { // we always connect small height tree with bigger height tree so that resultant
 										// height doesn't increase more than bigger trees height
-				parent[b] = a;
+				parent[b] = a;// ie. b ka baap ie. parent[b] is a
 			} else if (rank[a] < rank[b]) {
 				parent[a] = b;
 			} else { // this is the condition for rank[a]=rank[b] and only in this case the
 						// height/rank of tree will increase
 				parent[b] = a;// here we could also use parent[a]=b
-				rank[a]++;
+				rank[a]++;// only increased height of 'a' and not of both 'a' and 'b' cause b is pointing to 'a' ie. it is now a part of group/set 'a' 
 			}
 		}
 	}
@@ -85,7 +86,7 @@ public class DSU {
 				// here we also merged the case of equal size cause it doesnt matter who is
 				// parent of whom if sizes are equal
 				parent[b] = a;
-				size[a] += size[b];// since whole tree with leader 'a' is added to 'b'
+				size[a] += size[b];// since whole tree with leader 'b' is added to 'a'
 			} else {// this is executed if size [a]<size[b]
 				parent[a] = b;
 				size[b] += size[a];

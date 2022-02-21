@@ -1,8 +1,8 @@
+package Graph;
 // q 684 of leetcode
 public class RedundantConnection {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 	}
 
@@ -22,6 +22,7 @@ public class RedundantConnection {
 					parent)) {
 				sol[0] = edges[i][0];
 				sol[1] = edges[i][1];
+				break;
 			} else {
 				UnionByRank(edges[i][0], edges[i][1], parent, rank);
 			}

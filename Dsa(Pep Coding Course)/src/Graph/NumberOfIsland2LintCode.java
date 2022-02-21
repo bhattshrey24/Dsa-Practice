@@ -1,3 +1,4 @@
+package Graph;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,6 +17,7 @@ public class NumberOfIsland2LintCode {
 		if (operators == null) { // this to pass a stuid test case of lintcode
 			return sol;
 		}
+		
 		int parent[] = new int[m * n];// cause we are converting it in cell numbers
 		for (int i = 0; i < parent.length; i++) {
 			parent[i] = i;
@@ -38,7 +40,8 @@ public class NumberOfIsland2LintCode {
 
 			numOfGrps += 1; // we assume that by adding current point a new land/group/component is formed
 
-			grid[p.x][p.y] = 1;
+			grid[p.x][p.y] = 1;// mark visited
+			
 			if (isValid(n, m, p.x + 1, p.y)) {
 				if (grid[p.x + 1][p.y] == 1) {
 					int cellNum = (p.x + 1) * m + p.y;
