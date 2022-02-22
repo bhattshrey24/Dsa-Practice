@@ -1,10 +1,14 @@
+package Graph;
 import java.util.ArrayList;
 import java.util.List;
 
 public class GraphConnectivityWithThreshold1627 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		GraphConnectivityWithThreshold1627 ob = new GraphConnectivityWithThreshold1627();
+		
+				
+System.out.println(ob.gcd1(16, 36));
 	}
 
 	public List<Boolean> areConnected(int n, int threshold, int[][] queries) {
@@ -77,8 +81,8 @@ public class GraphConnectivityWithThreshold1627 {
 		}
 	}
 	
-	// not used in above question but here is the code for finding GCD using euclid theorem
-	 public static int gcd1(int a, int b)
+	// GCD IS NOT DIRECTLY USED IN ABOVE QUESTION but here is the code for finding GCD using euclid theorem
+	 public static int gcd1(int a, int b)// just dry run for 36 and 16
 	    {
 	        if (a == 0)
 	            return b;
