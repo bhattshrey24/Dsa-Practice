@@ -1,6 +1,7 @@
+package Graph;
 import java.util.HashSet;
 
-public class CrackingTheSafe {
+public class CrackingTheSafe_753 {
 // This is direct implementation of "DE BRUJIN SEQUENCE" algorithm
 	
 	// this is 0-1 question i.e in interview you can only answer if you already know
@@ -42,7 +43,7 @@ public class CrackingTheSafe {
 													// i.e not already present in current path
 
 				sb.append(String.valueOf(i));
-
+//System.out.println(sb.toString());
 				sol = crackSafeRec(visSequences, noOfCombinations, k, sb, newPerm, sol);// here leap of fath is tha that
 																						// newPermutation find out
 																						// whether you are the required
