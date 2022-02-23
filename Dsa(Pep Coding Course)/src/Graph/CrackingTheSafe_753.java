@@ -43,7 +43,6 @@ public class CrackingTheSafe_753 {
 													// i.e not already present in current path
 
 				sb.append(String.valueOf(i));
-//System.out.println(sb.toString());
 				sol = crackSafeRec(visSequences, noOfCombinations, k, sb, newPerm, sol);// here leap of fath is tha that
 																						// newPermutation find out
 																						// whether you are the required
