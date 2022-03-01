@@ -4,7 +4,7 @@ public class Maximize_Distance_to_Closest_Person_849 {
 
 	public static void main(String[] args) {
 		Maximize_Distance_to_Closest_Person_849 ob = new Maximize_Distance_to_Closest_Person_849();
-		int ans = ob.maxDistToClosest(new int[] { 0, 1 });
+		int ans = ob.maxDistToClosest(new int[] { 0, 0, 0, 0, 0, 1, 0, 0, 0 });
 		System.out.println("ans : " + ans);
 	}
 
@@ -37,7 +37,9 @@ public class Maximize_Distance_to_Closest_Person_849 {
 				suffixfixClose[j] = suffixfixClose[j + 1];
 			}
 		}
-
+		for (int i = 0; i < seats.length; i++) {
+			System.out.println(prefixClose[i] + " " + suffixfixClose[i]);
+		}
 		int sol = 1;// sol is initialized with 1 because it's given that there's atleast 1 seat
 					// empty and atleast 1 guest is already seated so answer can never be 0 cause
 					// the smallest possible answer will be for case [1,0] ie. 1

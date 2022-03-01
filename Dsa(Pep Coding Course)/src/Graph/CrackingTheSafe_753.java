@@ -1,9 +1,10 @@
 package Graph;
+
 import java.util.HashSet;
 
 public class CrackingTheSafe_753 {
 // This is direct implementation of "DE BRUJIN SEQUENCE" algorithm
-	
+
 	// this is 0-1 question i.e in interview you can only answer if you already know
 	// de brujin sequence , such 0-1 question are asked very less in interviews
 	// though cause in these type of questions its not possible to judge persons
@@ -20,7 +21,7 @@ public class CrackingTheSafe_753 {
 		}
 		HashSet<String> visSequences = new HashSet<>();
 		int noOfCombinations = (int) Math.pow(k, n);
-		
+
 		return crackSafeRec(visSequences, noOfCombinations, k, sb, sb.toString(), "");
 
 	}
@@ -28,21 +29,23 @@ public class CrackingTheSafe_753 {
 	public static String crackSafeRec(HashSet<String> visSequences, int noOfCombinations, int k, StringBuilder sb,
 			String curPermu, String sol) {
 
-		if (visSequences.size() == noOfCombinations - 1) {
+		if (visSequences.size() == noOfCombinations - 1) {// base case , I dont know why -1 krna pda
 			return sb.toString();
 		}
 
 		visSequences.add(curPermu);
 		String Str = curPermu.substring(1);
 
-		for (int i = 0; i < k; i++) {
+		for (int i = 0; i < k; i++) {// form all possible paths ie. 'str' ke end mei 0 to k
+										// saare lgakr dekho
 
 			String newPerm = Str + String.valueOf(i);
 
 			if (!visSequences.contains(newPerm)) {// we only call if the new permuation string is not already visited
 													// i.e not already present in current path
 
-				sb.append(String.valueOf(i));
+				sb.append(String.valueOf(i));// add to answer
+				
 				sol = crackSafeRec(visSequences, noOfCombinations, k, sb, newPerm, sol);// here leap of fath is tha that
 																						// newPermutation find out
 																						// whether you are the required
@@ -55,13 +58,14 @@ public class CrackingTheSafe_753 {
 					break;// length of sol will only be more than 0 when we hit base case and stack is
 							// falling that
 							// means we got the answer so why to continue just break out and return answer
-							// i.e sol
+							// i.e sol cause if you keep going further you will generate new strings and
+							// that will cause problem
 				}
 			}
 
 		}
 
-		// backtracking , removing cause current path didnt gave the answer so undo
+		// backtracking , removing cause current path didn't gave the answer so undo
 		visSequences.remove(curPermu);
 		sb.deleteCharAt(sb.length() - 1);
 
