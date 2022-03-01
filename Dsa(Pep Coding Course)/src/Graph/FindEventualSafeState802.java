@@ -1,3 +1,4 @@
+package Graph;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -5,23 +6,21 @@ import java.util.List;
 public class FindEventualSafeState802 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		int grf[][] = { { 1, 2 }, { 2, 3 }, { 5 }, { 0 }, { 5 }, {}, {} };
 		System.out.println(eventualSafeNodes(grf));
 	}
 
 	public static List<Integer> eventualSafeNodes(int[][] graph) {
-
 		List<Integer> sol = new ArrayList<>();
 		int[] visited = new int[graph.length];
 		for (int i = 0; i < visited.length; i++) {
-			visited[i] = -1;
+			visited[i] = -1;// -1 means unvisited
 		}
 		for (int i = 0; i < graph.length; i++) {
 			boolean isSafe = false;
-			isSafe = dfsRecursion(visited, i, graph);
+			isSafe = dfsRecursion(visited, i, graph);// have leap of faith that it returns whether 'i'th node is safe or not
 			if (isSafe) {
-				sol.add(i);
+				sol.add(i);// if it is safe then add it to solution
 			}
 		}
 		return sol;
