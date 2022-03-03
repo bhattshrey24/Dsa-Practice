@@ -14,21 +14,25 @@ public class Best_Meeting_Point_296 {
 		ArrayList<Pair> points = new ArrayList<>();// to collect points so that we don't have travel the matrix again
 		ArrayList<Integer> xCoordinates = new ArrayList<>();
 		ArrayList<Integer> yCoordinates = new ArrayList<>();
+
+		int R = grid.length;// number of rows in given grid
+		int C = grid[0].length;// number of columns in given grid
+
 		// Just see video , It's quite easy but beautiful
 // The idea is that if we find median of all point's x axis and median of all point's y axis the point obtained will be closests to all points
 
-		for (int i = 0; i < grid.length; i++) {// moving in normal way ie first all columns of row 1 then all columns of
-												// row 2 etc
-			for (int j = 0; j < grid[i].length; j++) {
+		for (int i = 0; i < R; i++) {// moving in normal way ie first all columns of row 1 then all columns of
+										// row 2 etc
+			for (int j = 0; j < C; j++) {
 				if (grid[i][j] == 1) {
 					xCoordinates.add(i);
 					points.add(new Pair(i, j));// only add points once
 				}
 			}
 		}
-		for (int j = 0; j < grid[0].length; j++) {// moving different than normal ie. first all rows of column 1 are
-													// travelled then all rows of column 2 and so on
-			for (int i = 0; i < grid.length; i++) {
+		for (int j = 0; j < C; j++) {// moving different than normal ie. first all rows of column 1 are
+										// travelled then all rows of column 2 and so on
+			for (int i = 0; i < R; i++) {
 				if (grid[i][j] == 1) {
 					yCoordinates.add(j);
 				}
