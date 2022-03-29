@@ -1,3 +1,4 @@
+package Graph;
 import java.util.Scanner;
 
 import Graph.WeightedDirectedGraph;
@@ -40,7 +41,7 @@ public class FloydWarshall {
 			}
 		}
 
-		for (int v = 0; v < solMat.length; v++) {
+		for (int v = 0; v < solMat.length; v++) {//v times loop 
 			for (int i = 0; i < solMat.length; i++) {
 				for (int j = 0; j < solMat[i].length; j++) {
 				
