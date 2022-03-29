@@ -1,3 +1,4 @@
+package HashMap_And_Heap;
 import java.util.HashMap;
 import java.util.Map.Entry;
 
@@ -5,8 +6,8 @@ public class SubarraySumEqualsK560 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] arr = new int[] { 1, 1, 1 };
-		System.out.println(subarraySum(arr, 2));
+		int[] arr = new int[] {2,3,-1,4,-5,1 };
+		System.out.println(subarraySum(arr, 4));
 
 	}
 
@@ -29,7 +30,7 @@ public class SubarraySumEqualsK560 {
 											// if it appears x times means there are x contiguous subarray that
 											// satisfies the equation
 			}
-			if (hm.containsKey(prefixSum)) {// this is wrong i guess , we have to put start bound and not prefix sum
+			if (hm.containsKey(prefixSum)) {
 				int val = hm.get(prefixSum);
 				hm.put(prefixSum, val + 1);// we simply increase the occurance if its already present
 			} else {
